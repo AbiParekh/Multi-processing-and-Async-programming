@@ -1,7 +1,7 @@
 # API class
 import json
 import requests
-from teamDetails import TeamStatistics
+from teamDetail import TeamStatistics
 
 
 class API:
