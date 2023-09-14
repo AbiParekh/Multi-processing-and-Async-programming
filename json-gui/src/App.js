@@ -21,8 +21,16 @@ function App() {
             }
         };
 
-        fetchData();
+        fetchData()
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.error("There was an error fetching data:", error);
+            });
+;
     }, []);
+
 
     return (
         <div className="App">
