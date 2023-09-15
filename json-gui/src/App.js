@@ -13,7 +13,8 @@ function App() {
                     setTeamStats(data);
                 } else {
                     let errorText = await response.text();
-                    throw new Error(`Unexpected response: ${errorText}`);
+                    console.error(`Unexpected Response: ${errorText}`);
+                    setError(`Unexpected response: ${errorText}`);
                 }
             } catch (error) {
                 console.error("There was an error fetching the data", error);
@@ -28,7 +29,7 @@ function App() {
             .catch(error => {
                 console.error("There was an error fetching data:", error);
             });
-;
+
     }, []);
 
 
