@@ -19,6 +19,7 @@ def communication_thread_function():
     api_call = API()
     global team_stats_cache
     team_stats_cache = [team_stat.add_to_tuple() for team_stat in api_call.get_team_statistics()]
+    print("Data fetched:", team_stats_cache)
 
 
 def presentation_thread_function():
