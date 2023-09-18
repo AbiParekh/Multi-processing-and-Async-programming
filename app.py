@@ -2,9 +2,23 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 import threading
 from api import API
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 CORS(app)
+app.config['SQLALCHEMY_DATABASE_URL'] = 'sqlite://teams.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+
+
+class Team(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    team_name = db.Column(db.String(80), nullable=False)
+    team_number = db.Column(db.String(80), nullable=False)
+    team_code = db.Column(db.String(80), nullable=False)
+    score = db.Column(db.String(80), nullable=False)
+
 
 team_stats_cache = []
 

@@ -35,6 +35,13 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
+                <div className="navbar">
+                    <a href="/nfl">NFL</a>
+                    <a href="/nba">NBA</a>
+                    <a href="/mlb">MLB</a>
+                    <a href="/help">HELP</a>
+
+                </div>
                 <h2>Team Statistics</h2>
                 <button className="fetch-data-btn" onClick={handleFetchData}>
                     Fetch Data
@@ -55,3 +62,8 @@ function App() {
 }
 
 export default App;
+
+
+
+
+

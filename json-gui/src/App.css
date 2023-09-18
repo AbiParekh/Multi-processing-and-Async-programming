@@ -8,18 +8,18 @@
 }
 
 .fetch-data-btn {
-  background-color: #61dafb;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
-  font-size: 1.2em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-
-  /* Text styling */
-  color: #282c34;
-  text-decoration: none;
-  text-align: center;
+    background-color: blue;
+    border: none;
+    border-radius: 8px;
+    padding: 20px 40px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
 }
 
 .fetch-data-btn:hover {
@@ -66,4 +66,36 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.navbar {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    gap: 45px;
+    align-items: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1);
+}
+
+.navbar a:hover {
+    background-color: #4faed9;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.navbar a:active {
+    background-color: #3f91b9;
+    transform: scale(0.95);
 }
