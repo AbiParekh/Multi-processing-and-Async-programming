@@ -11,6 +11,7 @@ function App() {
             if (response.ok) {
                 let data = await response.json();
                 setTeamStats(data);
+                setError(null);
             } else {
                 let errorText = await response.text();
                 console.error(`Unexpected Response: ${errorText}`);
@@ -44,7 +45,7 @@ function App() {
                 </div>
                 <h2>Team Statistics</h2>
                 <button className="fetch-data-btn" onClick={handleFetchData}>
-                    Fetch Data
+                    Print the Data
                 </button>
                 <ul>
                     {teamStats.map((team, index) => (
