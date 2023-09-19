@@ -2,6 +2,7 @@
 import json
 import requests
 from teamDetail import TeamStatistics
+import os
 
 
 class API:
@@ -26,9 +27,19 @@ class API:
             print("JSON Response:", response_json)
             print()
 
-            # Save the JSON response to a file
-            with open(f"team_stats_{team_name}.json", "w") as json_file:
+            # Ensuring that the directory exists
+            directory_name = "team_stats_files"
+            if not os.path.exists(directory_name):
+                os.makedirs(directory_name)
+
+            # Save the JSON response to a file inside the directory
+            file_path = os.path.join(directory_name, f"team_stats_{team_name}.json")
+            with open(file_path, "w") as json_file:
                 json.dump(response_json, json_file, indent=4)
+
+            # Save the JSON response to a file
+            # with open(f"team_stats_{team_name}.json", "w") as json_file:
+            #     json.dump(response_json, json_file, indent=4)
 
             if 'matchUpStats' in response_json:
                 match_up_stats = response_json['matchUpStats']
