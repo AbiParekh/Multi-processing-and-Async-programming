@@ -4,7 +4,6 @@ import threading
 from api import API
 from flask_sqlalchemy import SQLAlchemy
 
-# from app import db
 
 app = Flask(__name__)
 CORS(app)
